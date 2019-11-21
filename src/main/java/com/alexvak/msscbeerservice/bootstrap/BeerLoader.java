@@ -4,12 +4,11 @@ import com.alexvak.msscbeerservice.domain.Beer;
 import com.alexvak.msscbeerservice.repositories.BeerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @Slf4j
-@Component
+//@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "0631234200036";
@@ -36,7 +35,7 @@ public class BeerLoader implements CommandLineRunner {
                     .minOnHand(10)
                     .quantityToBrew(100)
                     .price(new BigDecimal("9.25"))
-                    .utc(BEER_1_UPC)
+                    .upc(BEER_1_UPC)
                     .build());
 
             beerRepository.save(Beer.builder()
@@ -45,7 +44,7 @@ public class BeerLoader implements CommandLineRunner {
                     .minOnHand(12)
                     .quantityToBrew(200)
                     .price(new BigDecimal("14.25"))
-                    .utc(BEER_2_UPC)
+                    .upc(BEER_2_UPC)
                     .build());
 
             beerRepository.save(Beer.builder()
@@ -54,7 +53,7 @@ public class BeerLoader implements CommandLineRunner {
                     .minOnHand(12)
                     .quantityToBrew(200)
                     .price(new BigDecimal("14.25"))
-                    .utc(BEER_3_UPC)
+                    .upc(BEER_3_UPC)
                     .build());
         }
     }
