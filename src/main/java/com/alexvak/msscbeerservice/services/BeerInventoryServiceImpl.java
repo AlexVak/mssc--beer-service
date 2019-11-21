@@ -39,7 +39,8 @@ public class BeerInventoryServiceImpl implements BeerInventoryService {
 
         ResponseEntity<List<BeerInventoryDto>> responseEntity = restTemplate
                 .exchange(beerInventoryServiceHost + INVENTORY_PATH, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<>() {
+                        //https://stackoverflow.com/questions/54775253/jdk-11-0-2-compilation-fails-with-javac-npe-on-anonymous-parameterized-class-typ
+                        new ParameterizedTypeReference<List<BeerInventoryDto>>() {
                         }, beerId);
 
         //sum from inventory list
